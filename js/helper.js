@@ -9,11 +9,12 @@ const set_inner_text = (target, innerText) => {
 
 // ========================================================
 
-const append_li = (ul_target, li_id_name, innerText) => {
+const append_li = (ul_target, a_class_name, innerText) => {
 
   const ul = qs(ul_target);
   const li = document.createElement('li');
-  li.innerText = innerText;
+
+  li.innerHTML = `<span class="${a_class_name} dropdown-item" >${innerText}</span>`;  
   ul.append(li);
 };
 

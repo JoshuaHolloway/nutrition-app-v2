@@ -34,7 +34,6 @@ add_food_button.addEventListener('click', () => {
           Choose Food
         </button>
         <ul id="food${row_num}_dropdown" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <li><a id="food_option_1" class="dropdown-item" href="#">Action</a></li>
         </ul>
       </div>
     </th>
@@ -63,7 +62,7 @@ add_food_button.addEventListener('click', () => {
   // -id=food# based on row-num
   known_foods_not_in_table_arr.forEach((x,idx) => {
 
-    append_li(`#food${row_num}_dropdown`, `food_option_${idx}`, x);
+    append_li(`#food${row_num}_dropdown`, `dropdown_option_${idx}`, x);
   });
 
   // - - - - - - - - - - - - - - - - - - - - - - -
