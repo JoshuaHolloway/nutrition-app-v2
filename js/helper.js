@@ -34,16 +34,8 @@ const append_li = (row_num, a_class_name, innerText) => {
         ${food_name}
       </button>`;
 
-
     // Create corresponding modal and append to body
     generate_modal(row_num, food_data_obj);
-
-
-
-
-
-
-
 
   });
 };
@@ -85,7 +77,7 @@ const generate_modal = (row_num, food_obj) => {
     <div class="modal-dialog modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Apple</h5>
+          <h5 class="modal-title" id="exampleModalLabel">${food_obj.name}</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -105,7 +97,7 @@ const generate_modal = (row_num, food_obj) => {
                 <th scope="row">
                   Protein
                 </th>
-                <td>1</td>
+                <td>${food_obj.nutrition_facts.protein}</td>
                 <td>1</td>
                 <td>2</td>
                 <td>50%</td>
@@ -115,7 +107,7 @@ const generate_modal = (row_num, food_obj) => {
                 <th scope="row">
                   Total Carbs
                 </th>
-                <td>1</td>
+                <td>${food_obj.nutrition_facts.carbs.total}</td>
                 <td>1</td>
                 <td>2</td>
                 <td>50%</td>
@@ -125,7 +117,7 @@ const generate_modal = (row_num, food_obj) => {
                 <th scope="row">
                   Fiber
                 </th>
-                <td>1</td>
+                <td>${food_obj.nutrition_facts.carbs.fiber.total}</td>
                 <td>1</td>
                 <td>2</td>
                 <td>50%</td>
@@ -135,7 +127,7 @@ const generate_modal = (row_num, food_obj) => {
                 <th scope="row">
                   Insoluble Fiber
                 </th>
-                <td>1</td>
+                <td>${food_obj.nutrition_facts.carbs.fiber.insoluble}</td>
                 <td>1</td>
                 <td>2</td>
                 <td>50%</td>
@@ -145,7 +137,7 @@ const generate_modal = (row_num, food_obj) => {
                 <th scope="row">
                   Soluble Fiber
                 </th>
-                <td>1</td>
+                <td>${food_obj.nutrition_facts.carbs.fiber.soluble}</td>
                 <td>1</td>
                 <td>2</td>
                 <td>50%</td>
@@ -155,7 +147,7 @@ const generate_modal = (row_num, food_obj) => {
                 <th scope="row">
                   Sugars
                 </th>
-                <td>1</td>
+                <td>${food_obj.nutrition_facts.carbs.sugars.total}</td>
                 <td>1</td>
                 <td>2</td>
                 <td>50%</td>
@@ -163,9 +155,9 @@ const generate_modal = (row_num, food_obj) => {
 
               <tr>
                 <th scope="row">
-                  Carbs
+                  Added
                 </th>
-                <td>1</td>
+                <td>${food_obj.nutrition_facts.carbs.sugars.added}</td>
                 <td>1</td>
                 <td>2</td>
                 <td>50%</td>
@@ -175,7 +167,7 @@ const generate_modal = (row_num, food_obj) => {
                 <th scope="row">
                   Total Fat
                 </th>
-                <td>1</td>
+                <td>${food_obj.nutrition_facts.fat.total}</td>
                 <td>1</td>
                 <td>2</td>
                 <td>50%</td>
@@ -185,7 +177,7 @@ const generate_modal = (row_num, food_obj) => {
                 <th scope="row">
                   Polyunsaturated Fat
                 </th>
-                <td>1</td>
+                <td>${food_obj.nutrition_facts.fat.poly}</td>
                 <td>1</td>
                 <td>2</td>
                 <td>50%</td>
@@ -195,7 +187,7 @@ const generate_modal = (row_num, food_obj) => {
                 <th scope="row">
                   Monounsaturated Fat
                 </th>
-                <td>1</td>
+                <td>${food_obj.nutrition_facts.fat.mono}</td>
                 <td>1</td>
                 <td>2</td>
                 <td>50%</td>
@@ -205,17 +197,27 @@ const generate_modal = (row_num, food_obj) => {
                 <th scope="row">
                   Vitamin A
                 </th>
-                <td>1</td>
+                <td>${food_obj.nutrition_facts.micro.vitamins.A}</td>
                 <td>1</td>
                 <td>2</td>
                 <td>50%</td>
               </tr>
 
               <tr>
+              <th scope="row">
+              Vitamin B6
+              </th>
+              <td>${food_obj.nutrition_facts.micro.vitamins.B6}</td>
+              <td>1</td>
+              <td>2</td>
+              <td>50%</td>
+              </tr>
+              
+              <tr>
                 <th scope="row">
-                  Vitamin B6
+                  Biotin
                 </th>
-                <td>1</td>
+                <td>${food_obj.nutrition_facts.micro.vitamins.biotin}</td>
                 <td>1</td>
                 <td>2</td>
                 <td>50%</td>
@@ -225,7 +227,7 @@ const generate_modal = (row_num, food_obj) => {
                 <th scope="row">
                   Vitamin B12
                 </th>
-                <td>1</td>
+                <td>${food_obj.nutrition_facts.micro.vitamins.B12}</td>
                 <td>1</td>
                 <td>2</td>
                 <td>50%</td>
@@ -235,7 +237,7 @@ const generate_modal = (row_num, food_obj) => {
                 <th scope="row">
                   Vitamin C
                 </th>
-                <td>1</td>
+                <td>${food_obj.nutrition_facts.micro.vitamins.C}</td>
                 <td>1</td>
                 <td>2</td>
                 <td>50%</td>
@@ -245,7 +247,7 @@ const generate_modal = (row_num, food_obj) => {
                 <th scope="row">
                   Vitamin D
                 </th>
-                <td>1</td>
+                <td>${food_obj.nutrition_facts.micro.vitamins.D}</td>
                 <td>1</td>
                 <td>2</td>
                 <td>50%</td>
@@ -255,7 +257,7 @@ const generate_modal = (row_num, food_obj) => {
                 <th scope="row">
                   Vitamin E
                 </th>
-                <td>1</td>
+                <td>${food_obj.nutrition_facts.micro.vitamins.E}</td>
                 <td>1</td>
                 <td>2</td>
                 <td>50%</td>
@@ -265,27 +267,18 @@ const generate_modal = (row_num, food_obj) => {
                 <th scope="row">
                   Vitamin K
                 </th>
-                <td>1</td>
+                <td>${food_obj.nutrition_facts.micro.vitamins.K}</td>
                 <td>1</td>
                 <td>2</td>
                 <td>50%</td>
               </tr>
 
-              <tr>
-                <th scope="row">
-                  Biotin
-                </th>
-                <td>1</td>
-                <td>1</td>
-                <td>2</td>
-                <td>50%</td>
-              </tr>
 
               <tr>
                 <th scope="row">
                   Calcium
                 </th>
-                <td>1</td>
+                <td>${food_obj.nutrition_facts.micro.minerals.calcium}</td>
                 <td>1</td>
                 <td>2</td>
                 <td>50%</td>
@@ -295,7 +288,7 @@ const generate_modal = (row_num, food_obj) => {
                 <th scope="row">
                   Chloride
                 </th>
-                <td>1</td>
+                <td>${food_obj.nutrition_facts.micro.minerals.chloride}</td>
                 <td>1</td>
                 <td>2</td>
                 <td>50%</td>
@@ -305,7 +298,7 @@ const generate_modal = (row_num, food_obj) => {
                 <th scope="row">
                   Choline
                 </th>
-                <td>1</td>
+                <td>${food_obj.nutrition_facts.micro.minerals.choline}</td>
                 <td>1</td>
                 <td>2</td>
                 <td>50%</td>
@@ -315,7 +308,7 @@ const generate_modal = (row_num, food_obj) => {
                 <th scope="row">
                   Chromium
                 </th>
-                <td>1</td>
+                <td>${food_obj.nutrition_facts.micro.minerals.chromium}</td>
                 <td>1</td>
                 <td>2</td>
                 <td>50%</td>
@@ -325,7 +318,7 @@ const generate_modal = (row_num, food_obj) => {
                 <th scope="row">
                   Copper
                 </th>
-                <td>1</td>
+                <td>${food_obj.nutrition_facts.micro.minerals.copper}</td>
                 <td>1</td>
                 <td>2</td>
                 <td>50%</td>
@@ -335,7 +328,7 @@ const generate_modal = (row_num, food_obj) => {
                 <th scope="row">
                   Folate/Folic Acid
                 </th>
-                <td>1</td>
+                <td>${food_obj.nutrition_facts.micro.minerals.folate}</td>
                 <td>1</td>
                 <td>2</td>
                 <td>50%</td>
@@ -345,7 +338,7 @@ const generate_modal = (row_num, food_obj) => {
                 <th scope="row">
                   Iodine
                 </th>
-                <td>1</td>
+                <td>${food_obj.nutrition_facts.micro.minerals.iodine}</td>
                 <td>1</td>
                 <td>2</td>
                 <td>50%</td>
@@ -357,7 +350,7 @@ const generate_modal = (row_num, food_obj) => {
                 <th scope="row">
                   Magnesium
                 </th>
-                <td>1</td>
+                <td>${food_obj.nutrition_facts.micro.minerals.magnesium}</td>
                 <td>1</td>
                 <td>2</td>
                 <td>50%</td>
@@ -368,7 +361,7 @@ const generate_modal = (row_num, food_obj) => {
                 <th scope="row">
                   Manganese
                 </th>
-                <td>1</td>
+                <td>${food_obj.nutrition_facts.micro.minerals.manganese}</td>
                 <td>1</td>
                 <td>2</td>
                 <td>50%</td>
@@ -379,7 +372,7 @@ const generate_modal = (row_num, food_obj) => {
                 <th scope="row">
                   Molybdenum
                 </th>
-                <td>1</td>
+                <td>${food_obj.nutrition_facts.micro.minerals.molybdenum}</td>
                 <td>1</td>
                 <td>2</td>
                 <td>50%</td>
@@ -390,7 +383,7 @@ const generate_modal = (row_num, food_obj) => {
                 <th scope="row">
                   Niacin
                 </th>
-                <td>1</td>
+                <td>${food_obj.nutrition_facts.micro.minerals.niacin}</td>
                 <td>1</td>
                 <td>2</td>
                 <td>50%</td>
@@ -401,7 +394,7 @@ const generate_modal = (row_num, food_obj) => {
                 <th scope="row">
                   Pantothenic
                 </th>
-                <td>1</td>
+                <td>${food_obj.nutrition_facts.micro.minerals.pantothenic}</td>
                 <td>1</td>
                 <td>2</td>
                 <td>50%</td>
@@ -412,7 +405,7 @@ const generate_modal = (row_num, food_obj) => {
                 <th scope="row">
                   Phosphorus
                 </th>
-                <td>1</td>
+                <td>${food_obj.nutrition_facts.micro.minerals.phosphorus}</td>
                 <td>1</td>
                 <td>2</td>
                 <td>50%</td>
@@ -424,7 +417,7 @@ const generate_modal = (row_num, food_obj) => {
                 <th scope="row">
                   Potassium
                 </th>
-                <td>1</td>
+                <td>${food_obj.nutrition_facts.micro.minerals.potassium}</td>
                 <td>1</td>
                 <td>2</td>
                 <td>50%</td>
@@ -435,7 +428,7 @@ const generate_modal = (row_num, food_obj) => {
                 <th scope="row">
                   Riboflavin
                 </th>
-                <td>1</td>
+                <td>${food_obj.nutrition_facts.micro.minerals.riboflavin}</td>
                 <td>1</td>
                 <td>2</td>
                 <td>50%</td>
@@ -446,7 +439,7 @@ const generate_modal = (row_num, food_obj) => {
                 <th scope="row">
                   Selenium
                 </th>
-                <td>1</td>
+                <td>${food_obj.nutrition_facts.micro.minerals.selenium}</td>
                 <td>1</td>
                 <td>2</td>
                 <td>50%</td>
@@ -457,7 +450,7 @@ const generate_modal = (row_num, food_obj) => {
                 <th scope="row">
                   Sodium
                 </th>
-                <td>1</td>
+                <td>${food_obj.nutrition_facts.micro.minerals.sodium}</td>
                 <td>1</td>
                 <td>2</td>
                 <td>50%</td>
@@ -468,28 +461,25 @@ const generate_modal = (row_num, food_obj) => {
                 <th scope="row">
                   Thiamin
                 </th>
-                <td>1</td>
+                <td>${food_obj.nutrition_facts.micro.minerals.thiamin}</td>
                 <td>1</td>
                 <td>2</td>
                 <td>50%</td>
               </tr>
-
 
               <!-- Zinc	11mg -->
               <tr>
                 <th scope="row">
                   Zinc
                 </th>
-                <td>1</td>
+                <td>${food_obj.nutrition_facts.micro.minerals.zinc}</td>
                 <td>1</td>
                 <td>2</td>
                 <td>50%</td>
               </tr>
 
-
             </tbody>
           </table>
-
 
         </div>
         <div class="modal-footer">
