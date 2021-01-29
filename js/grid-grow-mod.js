@@ -27,14 +27,13 @@ add_food_button.addEventListener('click', () => {
   // Change HTML 
   const new_row = document.createElement('tr');   // table-row
   //const new_cell = document.createElement('td');  // table-data-cell
-  const ul_id = `food${row_num}_dropdown`;
   new_row.innerHTML = 
     `<th scope="row">
       <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
           Choose Food
         </button>
-        <ul id="food0_dropdown" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <ul id="food${row_num}_dropdown" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <li><a id="food_option_1" class="dropdown-item" href="#">Action</a></li>
         </ul>
       </div>
@@ -63,6 +62,7 @@ add_food_button.addEventListener('click', () => {
   // Set inner text in drop down:
   // -id=food# based on row-num
   known_foods_not_in_table_arr.forEach((x,idx) => {
+
     append_li(`#food${row_num}_dropdown`, `food_option_${idx}`, x);
   });
 
