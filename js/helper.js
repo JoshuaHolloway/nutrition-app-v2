@@ -18,16 +18,20 @@ const append_li = (row_num, a_class_name, innerText) => {
   ul.append(li);
 
   // food${row_num}_dropdown_button_text
-  const dropdown_button_food_text_HTML_elem = qs(`#food${row_num}_dropdown_button_text`);
+  const dropdown_button_HTML_elem_parent = qs(`#dropdown-button_food${row_num}`).parentElement;
 
   li.addEventListener('click', () => {
     console.log(`${innerText} clicked`);
-    dropdown_button_food_text_HTML_elem.innerText = innerText;
-
+    
     // Add food data to foods object
     const food_name = innerText;
     const food_data_obj = known_foods[food_name];
     foods[food_name] = food_data_obj;
+    
+    dropdown_button_HTML_elem_parent.innerHTML = 
+      `<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-${row_num}">
+        ${food_name}
+      </button>`;
   });
 };
 

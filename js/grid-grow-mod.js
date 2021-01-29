@@ -28,10 +28,10 @@ add_food_button.addEventListener('click', () => {
   new_row.innerHTML = 
     `<th scope="row">
       <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+        <button id="dropdown-button_food${row_num}" class="btn btn-secondary dropdown-toggle" type="button"data-bs-toggle="dropdown" aria-expanded="false">
           <span id="food${row_num}_dropdown_button_text">Choose Food</span>
         </button>
-        <ul id="food${row_num}_dropdown" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <ul id="food${row_num}_dropdown" class="dropdown-menu">
         </ul>
       </div>
     </th>
