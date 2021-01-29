@@ -23,6 +23,11 @@ const append_li = (row_num, a_class_name, innerText) => {
   li.addEventListener('click', () => {
     console.log(`${innerText} clicked`);
     dropdown_button_food_text_HTML_elem.innerText = innerText;
+
+    // Add food data to foods object
+    const food_name = innerText;
+    const food_data_obj = known_foods[food_name];
+    foods[food_name] = food_data_obj;
   });
 };
 
@@ -31,24 +36,27 @@ const append_li = (row_num, a_class_name, innerText) => {
 const known_foods_not_in_table = () => {
 
   const known_foods_keys = Object.keys(known_foods);
-  let foods_keys = Object.keys(foods);
+  const foods_keys = Object.keys(foods);
 
-  const known_foods_not_in_table_obj = {};
-  const known_foods_not_in_table_arr = [];
-  known_foods_keys.forEach((key, idx) => {     
-    if (known_foods_keys[idx] !== foods_keys[idx]) {
-      const food_name = known_foods_keys[idx];
+  //const known_foods_not_in_table_obj = {};
+  //const known_foods_not_in_table_arr = [];
 
-      known_foods_not_in_table_obj[food_name] = foods[known_foods_keys[idx]];
+  // https://stackoverflow.com/a/33034768
+  // const arr1 = [1,2,3];
+  // const arr2 = [2,3];
+  // const a = arr2.includes(1);
+  // const b = arr2.includes(2);
+  // const c = arr2.includes(3);
 
-      known_foods_not_in_table_arr.push(food_name);
-    }
-  });
-  return {known_foods_not_in_table_arr, known_foods_not_in_table_obj};
+  // -Return the current element of arr1 
+  //  if arr2 doesn't include it.
+  //let difference = arr1.filter(x => !arr2.includes(x));
+  const difference = known_foods_keys.filter(x => !foods_keys.includes(x));
+  return {known_food_names_not_in_table: difference};
 };
 
 // ========================================================
 
-const add_event_listener = () => {
+const add_food_to_known_foods = () => {
 
 };

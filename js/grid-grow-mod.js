@@ -18,9 +18,7 @@ add_food_button.addEventListener('click', () => {
   // - - - - - - - - - - - - - - - - - - - - - - -
 
   // Grab known foods not already in table
-  const {known_foods_not_in_table_arr, known_foods_not_in_table_obj}  = known_foods_not_in_table();
-  console.log(known_foods_not_in_table);
-  console.log(known_foods_not_in_table_obj);
+  const {known_food_names_not_in_table}  = known_foods_not_in_table();
 
   // - - - - - - - - - - - - - - - - - - - - - - -
   
@@ -55,16 +53,12 @@ add_food_button.addEventListener('click', () => {
   // Add new row to table
   main_table_body.append(new_row);
 
-  
-  
-
   // Set inner text in drop down:
   // -id=food# based on row-num
-  known_foods_not_in_table_arr.forEach((food_name,idx) => {
+  known_food_names_not_in_table.forEach((food_name,idx) => {
 
     
     append_li(row_num, `dropdown_option_${idx}`, food_name);
-    add_event_listener();
   });
 
   // - - - - - - - - - - - - - - - - - - - - - - -
