@@ -31,7 +31,7 @@ add_food_button.addEventListener('click', () => {
     `<th scope="row">
       <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-          Choose Food
+          <span id="food${row_num}_dropdown_button_text">Choose Food</span>
         </button>
         <ul id="food${row_num}_dropdown" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         </ul>
@@ -60,9 +60,11 @@ add_food_button.addEventListener('click', () => {
 
   // Set inner text in drop down:
   // -id=food# based on row-num
-  known_foods_not_in_table_arr.forEach((x,idx) => {
+  known_foods_not_in_table_arr.forEach((food_name,idx) => {
 
-    append_li(`#food${row_num}_dropdown`, `dropdown_option_${idx}`, x);
+    
+    append_li(row_num, `dropdown_option_${idx}`, food_name);
+    add_event_listener();
   });
 
   // - - - - - - - - - - - - - - - - - - - - - - -
