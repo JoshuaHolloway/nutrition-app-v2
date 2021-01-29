@@ -27,11 +27,24 @@ const append_li = (row_num, a_class_name, innerText) => {
     const food_name = innerText;
     const food_data_obj = known_foods[food_name];
     foods[food_name] = food_data_obj;
+    foods[food_name].servings = 0;
     
     dropdown_button_HTML_elem_parent.innerHTML = 
       `<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-${row_num}">
         ${food_name}
       </button>`;
+
+
+    // Create corresponding modal and append to body
+    generate_modal(row_num, food_data_obj);
+
+
+
+
+
+
+
+
   });
 };
 
@@ -61,6 +74,431 @@ const known_foods_not_in_table = () => {
 
 // ========================================================
 
-const add_food_to_known_foods = () => {
+const generate_modal = (row_num, food_obj) => {
 
+  const div = document.createElement('div');
+  const body = qs('body');
+  body.append(div);
+
+  const modal_HTML = 
+  `<div class="modal fade" id="modal-${row_num}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Apple</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <table class="table table-dark table-hover table-striped">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">Per Serving</th>
+                <th scope="col">Consumed</th>
+                <th scope="col">Goal</th>
+                <th scope="col">% Achieved</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">
+                  Protein
+                </th>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>50%</td>
+              </tr>
+
+              <tr>
+                <th scope="row">
+                  Total Carbs
+                </th>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>50%</td>
+              </tr>
+
+              <tr>
+                <th scope="row">
+                  Fiber
+                </th>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>50%</td>
+              </tr>
+
+              <tr>
+                <th scope="row">
+                  Insoluble Fiber
+                </th>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>50%</td>
+              </tr>
+
+              <tr>
+                <th scope="row">
+                  Soluble Fiber
+                </th>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>50%</td>
+              </tr>
+
+              <tr>
+                <th scope="row">
+                  Sugars
+                </th>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>50%</td>
+              </tr>
+
+              <tr>
+                <th scope="row">
+                  Carbs
+                </th>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>50%</td>
+              </tr>
+
+              <tr>
+                <th scope="row">
+                  Total Fat
+                </th>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>50%</td>
+              </tr>
+
+              <tr>
+                <th scope="row">
+                  Polyunsaturated Fat
+                </th>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>50%</td>
+              </tr>
+
+              <tr>
+                <th scope="row">
+                  Monounsaturated Fat
+                </th>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>50%</td>
+              </tr>
+
+              <tr>
+                <th scope="row">
+                  Vitamin A
+                </th>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>50%</td>
+              </tr>
+
+              <tr>
+                <th scope="row">
+                  Vitamin B6
+                </th>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>50%</td>
+              </tr>
+
+              <tr>
+                <th scope="row">
+                  Vitamin B12
+                </th>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>50%</td>
+              </tr>
+
+              <tr>
+                <th scope="row">
+                  Vitamin C
+                </th>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>50%</td>
+              </tr>
+
+              <tr>
+                <th scope="row">
+                  Vitamin D
+                </th>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>50%</td>
+              </tr>
+
+              <tr>
+                <th scope="row">
+                  Vitamin E
+                </th>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>50%</td>
+              </tr>
+
+              <tr>
+                <th scope="row">
+                  Vitamin K
+                </th>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>50%</td>
+              </tr>
+
+              <tr>
+                <th scope="row">
+                  Biotin
+                </th>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>50%</td>
+              </tr>
+
+              <tr>
+                <th scope="row">
+                  Calcium
+                </th>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>50%</td>
+              </tr>
+
+              <tr>
+                <th scope="row">
+                  Chloride
+                </th>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>50%</td>
+              </tr>
+
+              <tr>
+                <th scope="row">
+                  Choline
+                </th>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>50%</td>
+              </tr>
+
+              <tr>
+                <th scope="row">
+                  Chromium
+                </th>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>50%</td>
+              </tr>
+
+              <tr>
+                <th scope="row">
+                  Copper
+                </th>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>50%</td>
+              </tr>
+
+              <tr>
+                <th scope="row">
+                  Folate/Folic Acid
+                </th>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>50%</td>
+              </tr>
+              
+              <tr>
+                <th scope="row">
+                  Iodine
+                </th>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>50%</td>
+              </tr>
+              
+              
+              <!-- Magnesium	400mg	420mg -->
+              <tr>
+                <th scope="row">
+                  Magnesium
+                </th>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>50%</td>
+              </tr>
+              
+              <!-- Manganese	2.3mg -->
+              <tr>
+                <th scope="row">
+                  Manganese
+                </th>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>50%</td>
+              </tr>
+              
+              <!-- Molybdenum	45mcg -->
+              <tr>
+                <th scope="row">
+                  Molybdenum
+                </th>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>50%</td>
+              </tr>
+              
+              <!-- Niacin	16mg NE (1) -->
+              <tr>
+                <th scope="row">
+                  Niacin
+                </th>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>50%</td>
+              </tr>
+              
+              <!-- Pantothenic Acid	5mg -->
+              <tr>
+                <th scope="row">
+                  Pantothenic
+                </th>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>50%</td>
+              </tr>
+
+              <!-- Phosphorus	1250mg -->
+              <tr>
+                <th scope="row">
+                  Phosphorus
+                </th>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>50%</td>
+              </tr>
+
+              
+              <!-- Potassium	4700mg -->
+              <tr>
+                <th scope="row">
+                  Potassium
+                </th>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>50%</td>
+              </tr>
+
+              <!-- Riboflavin	1.3mg -->
+              <tr>
+                <th scope="row">
+                  Riboflavin
+                </th>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>50%</td>
+              </tr>
+
+              <!-- Selenium	55mcg -->
+              <tr>
+                <th scope="row">
+                  Selenium
+                </th>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>50%</td>
+              </tr>
+
+              <!-- Sodium	2300mg -->
+              <tr>
+                <th scope="row">
+                  Sodium
+                </th>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>50%</td>
+              </tr>
+
+              <!-- Thiamin	1.2mg -->
+              <tr>
+                <th scope="row">
+                  Thiamin
+                </th>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>50%</td>
+              </tr>
+
+
+              <!-- Zinc	11mg -->
+              <tr>
+                <th scope="row">
+                  Zinc
+                </th>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>50%</td>
+              </tr>
+
+
+            </tbody>
+          </table>
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>`;
+
+  div.innerHTML = modal_HTML;
 };

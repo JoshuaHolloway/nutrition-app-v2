@@ -60,8 +60,6 @@ add_food_button.addEventListener('click', () => {
   // Set inner text in drop down:
   // -id=food# based on row-num
   known_food_names_not_in_table.forEach((food_name,idx) => {
-
-    
     append_li(row_num, `dropdown_option_${idx}`, food_name);
   });
 
