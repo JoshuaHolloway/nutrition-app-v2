@@ -1,4 +1,4 @@
-let num_rows = 1;
+let num_rows = 0;
 
 // ==============================================
 
@@ -13,10 +13,13 @@ const add_food_button = document.querySelector('#add-food-button');
 add_food_button.addEventListener('click', () => {
   
   num_rows++;
+  const row_num = num_rows - 1; // 0-based indexing
    
   // - - - - - - - - - - - - - - - - - - - - - - -
 
-  const known_foods_not_in_table_obj = known_foods_not_in_table();
+  // Grab known foods not already in table
+  const {known_foods_not_in_table_arr, known_foods_not_in_table_obj}  = known_foods_not_in_table();
+  console.log(known_foods_not_in_table);
   console.log(known_foods_not_in_table_obj);
 
   // - - - - - - - - - - - - - - - - - - - - - - -
@@ -24,13 +27,14 @@ add_food_button.addEventListener('click', () => {
   // Change HTML 
   const new_row = document.createElement('tr');   // table-row
   //const new_cell = document.createElement('td');  // table-data-cell
+  const ul_id = `food${row_num}_dropdown`;
   new_row.innerHTML = 
     `<th scope="row">
       <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
           Choose Food
         </button>
-        <ul id="food3_dropdown" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <ul id="food0_dropdown" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <li><a id="food_option_1" class="dropdown-item" href="#">Action</a></li>
         </ul>
       </div>
@@ -52,12 +56,15 @@ add_food_button.addEventListener('click', () => {
   
   // Add new row to table
   main_table_body.append(new_row);
+
   
+  
+
   // Set inner text in drop down:
   // -id=food# based on row-num
-  append_li('#food3_dropdown', 'food_option_1', 'New Food 1');
-  append_li('#food3_dropdown', 'food_option_2', 'New Food 2');
-  append_li('#food3_dropdown', 'food_option_3', 'New Food 3');
+  known_foods_not_in_table_arr.forEach((x,idx) => {
+    append_li(`#food${row_num}_dropdown`, `food_option_${idx}`, x);
+  });
 
   // - - - - - - - - - - - - - - - - - - - - - - -
   
