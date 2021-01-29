@@ -1,0 +1,36 @@
+// Variables
+// Material Dark Theme: https://material.io/design/color/dark-theme.html#ui-application
+$primary: #BB86FC;//#401f7c;
+$secondary: #03DAC5; 
+$success: #3700B3; // Primary-Variant
+$error: #CF6679;
+$dark: #121212; // Background / Surface
+$border-radius: 0;
+$border-radius-sm: 0;
+$border-radius-lg: 0;
+
+// Utilities
+$utilities: () !default;
+$utilities: map-merge(
+  (
+    'input-padding': (
+      property: padding,
+      class: JOSH,
+      values: (
+        0: 0,
+        1: 0.3rem,
+        2: 0.5rem,
+        3: 0.7rem,
+        4: 0.9rem,
+        5: 1rem
+      )
+    ),
+    // Can add anoterh utility here
+  ),
+  $utilities
+);
+
+// ========================================================
+
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+@import 'style';
