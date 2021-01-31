@@ -122,7 +122,1052 @@ const known_foods = {
         }
       }
     }, 
-  }
+  },
+  'pie': {
+    name: 'orange',
+    nutrition_facts: {
+      protein: 0.9,
+      fat: {
+        total: 0.1,
+        saturated: 0,
+        mono: 0,
+        poly: 0,
+        trans: -1
+      },
+      carbs: {
+        total: 11,
+        fiber: {
+          total: 000,
+          insoluble: 111,
+          soluble: 222
+        },
+        sugars: {
+          total: 333,
+          added: 444
+        }
+      },
+      micro: {
+        vitamins: {
+          A: 555,
+          B6: 666,
+          biotin: 777,
+          B12: 888,
+          C: 999,
+          D: 0000,
+          E: 1111,
+          K: 2222,
+        },
+        minerals: {
+          calcium: 3333,
+          chloride: 4444,
+          choline: 5555,
+          chromium: 6666,
+          copper: 7777,
+          folate: 8888,
+          iodine: 9999,
+          phosphorus: 000000,
+          potassium: 111111,
+          sodium: 222222,
+          magnesium: 333333,
+          manganese: 444444,
+          molybdenum: 555555,
+          niacin: 666666,
+          pantothenic: 777777,
+          riboflavin: 888888,
+          selenium: 999999,
+          thiamin: 00000000,
+          zinc: 11111111
+        }
+      }
+    }, 
+  },
+  'apple': {
+    name: 'orange',
+    nutrition_facts: {
+      protein: 0.9,
+      fat: {
+        total: 0.1,
+        saturated: 0,
+        mono: 0,
+        poly: 0,
+        trans: -1
+      },
+      carbs: {
+        total: 11,
+        fiber: {
+          total: 000,
+          insoluble: 111,
+          soluble: 222
+        },
+        sugars: {
+          total: 333,
+          added: 444
+        }
+      },
+      micro: {
+        vitamins: {
+          A: 555,
+          B6: 666,
+          biotin: 777,
+          B12: 888,
+          C: 999,
+          D: 0000,
+          E: 1111,
+          K: 2222,
+        },
+        minerals: {
+          calcium: 3333,
+          chloride: 4444,
+          choline: 5555,
+          chromium: 6666,
+          copper: 7777,
+          folate: 8888,
+          iodine: 9999,
+          phosphorus: 000000,
+          potassium: 111111,
+          sodium: 222222,
+          magnesium: 333333,
+          manganese: 444444,
+          molybdenum: 555555,
+          niacin: 666666,
+          pantothenic: 777777,
+          riboflavin: 888888,
+          selenium: 999999,
+          thiamin: 00000000,
+          zinc: 11111111
+        }
+      }
+    }, 
+  },
+  'spinach': {
+    name: 'orange',
+    nutrition_facts: {
+      protein: 0.9,
+      fat: {
+        total: 0.1,
+        saturated: 0,
+        mono: 0,
+        poly: 0,
+        trans: -1
+      },
+      carbs: {
+        total: 11,
+        fiber: {
+          total: 000,
+          insoluble: 111,
+          soluble: 222
+        },
+        sugars: {
+          total: 333,
+          added: 444
+        }
+      },
+      micro: {
+        vitamins: {
+          A: 555,
+          B6: 666,
+          biotin: 777,
+          B12: 888,
+          C: 999,
+          D: 0000,
+          E: 1111,
+          K: 2222,
+        },
+        minerals: {
+          calcium: 3333,
+          chloride: 4444,
+          choline: 5555,
+          chromium: 6666,
+          copper: 7777,
+          folate: 8888,
+          iodine: 9999,
+          phosphorus: 000000,
+          potassium: 111111,
+          sodium: 222222,
+          magnesium: 333333,
+          manganese: 444444,
+          molybdenum: 555555,
+          niacin: 666666,
+          pantothenic: 777777,
+          riboflavin: 888888,
+          selenium: 999999,
+          thiamin: 00000000,
+          zinc: 11111111
+        }
+      }
+    }, 
+  },
+  'carrot': {
+    name: 'orange',
+    nutrition_facts: {
+      protein: 0.9,
+      fat: {
+        total: 0.1,
+        saturated: 0,
+        mono: 0,
+        poly: 0,
+        trans: -1
+      },
+      carbs: {
+        total: 11,
+        fiber: {
+          total: 000,
+          insoluble: 111,
+          soluble: 222
+        },
+        sugars: {
+          total: 333,
+          added: 444
+        }
+      },
+      micro: {
+        vitamins: {
+          A: 555,
+          B6: 666,
+          biotin: 777,
+          B12: 888,
+          C: 999,
+          D: 0000,
+          E: 1111,
+          K: 2222,
+        },
+        minerals: {
+          calcium: 3333,
+          chloride: 4444,
+          choline: 5555,
+          chromium: 6666,
+          copper: 7777,
+          folate: 8888,
+          iodine: 9999,
+          phosphorus: 000000,
+          potassium: 111111,
+          sodium: 222222,
+          magnesium: 333333,
+          manganese: 444444,
+          molybdenum: 555555,
+          niacin: 666666,
+          pantothenic: 777777,
+          riboflavin: 888888,
+          selenium: 999999,
+          thiamin: 00000000,
+          zinc: 11111111
+        }
+      }
+    }, 
+  },
+  'tomatoe': {
+    name: 'orange',
+    nutrition_facts: {
+      protein: 0.9,
+      fat: {
+        total: 0.1,
+        saturated: 0,
+        mono: 0,
+        poly: 0,
+        trans: -1
+      },
+      carbs: {
+        total: 11,
+        fiber: {
+          total: 000,
+          insoluble: 111,
+          soluble: 222
+        },
+        sugars: {
+          total: 333,
+          added: 444
+        }
+      },
+      micro: {
+        vitamins: {
+          A: 555,
+          B6: 666,
+          biotin: 777,
+          B12: 888,
+          C: 999,
+          D: 0000,
+          E: 1111,
+          K: 2222,
+        },
+        minerals: {
+          calcium: 3333,
+          chloride: 4444,
+          choline: 5555,
+          chromium: 6666,
+          copper: 7777,
+          folate: 8888,
+          iodine: 9999,
+          phosphorus: 000000,
+          potassium: 111111,
+          sodium: 222222,
+          magnesium: 333333,
+          manganese: 444444,
+          molybdenum: 555555,
+          niacin: 666666,
+          pantothenic: 777777,
+          riboflavin: 888888,
+          selenium: 999999,
+          thiamin: 00000000,
+          zinc: 11111111
+        }
+      }
+    }, 
+  },
+  'prunes': {
+    name: 'orange',
+    nutrition_facts: {
+      protein: 0.9,
+      fat: {
+        total: 0.1,
+        saturated: 0,
+        mono: 0,
+        poly: 0,
+        trans: -1
+      },
+      carbs: {
+        total: 11,
+        fiber: {
+          total: 000,
+          insoluble: 111,
+          soluble: 222
+        },
+        sugars: {
+          total: 333,
+          added: 444
+        }
+      },
+      micro: {
+        vitamins: {
+          A: 555,
+          B6: 666,
+          biotin: 777,
+          B12: 888,
+          C: 999,
+          D: 0000,
+          E: 1111,
+          K: 2222,
+        },
+        minerals: {
+          calcium: 3333,
+          chloride: 4444,
+          choline: 5555,
+          chromium: 6666,
+          copper: 7777,
+          folate: 8888,
+          iodine: 9999,
+          phosphorus: 000000,
+          potassium: 111111,
+          sodium: 222222,
+          magnesium: 333333,
+          manganese: 444444,
+          molybdenum: 555555,
+          niacin: 666666,
+          pantothenic: 777777,
+          riboflavin: 888888,
+          selenium: 999999,
+          thiamin: 00000000,
+          zinc: 11111111
+        }
+      }
+    }, 
+  },
+  'grapes': {
+    name: 'orange',
+    nutrition_facts: {
+      protein: 0.9,
+      fat: {
+        total: 0.1,
+        saturated: 0,
+        mono: 0,
+        poly: 0,
+        trans: -1
+      },
+      carbs: {
+        total: 11,
+        fiber: {
+          total: 000,
+          insoluble: 111,
+          soluble: 222
+        },
+        sugars: {
+          total: 333,
+          added: 444
+        }
+      },
+      micro: {
+        vitamins: {
+          A: 555,
+          B6: 666,
+          biotin: 777,
+          B12: 888,
+          C: 999,
+          D: 0000,
+          E: 1111,
+          K: 2222,
+        },
+        minerals: {
+          calcium: 3333,
+          chloride: 4444,
+          choline: 5555,
+          chromium: 6666,
+          copper: 7777,
+          folate: 8888,
+          iodine: 9999,
+          phosphorus: 000000,
+          potassium: 111111,
+          sodium: 222222,
+          magnesium: 333333,
+          manganese: 444444,
+          molybdenum: 555555,
+          niacin: 666666,
+          pantothenic: 777777,
+          riboflavin: 888888,
+          selenium: 999999,
+          thiamin: 00000000,
+          zinc: 11111111
+        }
+      }
+    }, 
+  },
+  'grapenuts': {
+    name: 'orange',
+    nutrition_facts: {
+      protein: 0.9,
+      fat: {
+        total: 0.1,
+        saturated: 0,
+        mono: 0,
+        poly: 0,
+        trans: -1
+      },
+      carbs: {
+        total: 11,
+        fiber: {
+          total: 000,
+          insoluble: 111,
+          soluble: 222
+        },
+        sugars: {
+          total: 333,
+          added: 444
+        }
+      },
+      micro: {
+        vitamins: {
+          A: 555,
+          B6: 666,
+          biotin: 777,
+          B12: 888,
+          C: 999,
+          D: 0000,
+          E: 1111,
+          K: 2222,
+        },
+        minerals: {
+          calcium: 3333,
+          chloride: 4444,
+          choline: 5555,
+          chromium: 6666,
+          copper: 7777,
+          folate: 8888,
+          iodine: 9999,
+          phosphorus: 000000,
+          potassium: 111111,
+          sodium: 222222,
+          magnesium: 333333,
+          manganese: 444444,
+          molybdenum: 555555,
+          niacin: 666666,
+          pantothenic: 777777,
+          riboflavin: 888888,
+          selenium: 999999,
+          thiamin: 00000000,
+          zinc: 11111111
+        }
+      }
+    }, 
+  },
+  'oatmeal': {
+    name: 'orange',
+    nutrition_facts: {
+      protein: 0.9,
+      fat: {
+        total: 0.1,
+        saturated: 0,
+        mono: 0,
+        poly: 0,
+        trans: -1
+      },
+      carbs: {
+        total: 11,
+        fiber: {
+          total: 000,
+          insoluble: 111,
+          soluble: 222
+        },
+        sugars: {
+          total: 333,
+          added: 444
+        }
+      },
+      micro: {
+        vitamins: {
+          A: 555,
+          B6: 666,
+          biotin: 777,
+          B12: 888,
+          C: 999,
+          D: 0000,
+          E: 1111,
+          K: 2222,
+        },
+        minerals: {
+          calcium: 3333,
+          chloride: 4444,
+          choline: 5555,
+          chromium: 6666,
+          copper: 7777,
+          folate: 8888,
+          iodine: 9999,
+          phosphorus: 000000,
+          potassium: 111111,
+          sodium: 222222,
+          magnesium: 333333,
+          manganese: 444444,
+          molybdenum: 555555,
+          niacin: 666666,
+          pantothenic: 777777,
+          riboflavin: 888888,
+          selenium: 999999,
+          thiamin: 00000000,
+          zinc: 11111111
+        }
+      }
+    }, 
+  },
+  'milk': {
+    name: 'orange',
+    nutrition_facts: {
+      protein: 0.9,
+      fat: {
+        total: 0.1,
+        saturated: 0,
+        mono: 0,
+        poly: 0,
+        trans: -1
+      },
+      carbs: {
+        total: 11,
+        fiber: {
+          total: 000,
+          insoluble: 111,
+          soluble: 222
+        },
+        sugars: {
+          total: 333,
+          added: 444
+        }
+      },
+      micro: {
+        vitamins: {
+          A: 555,
+          B6: 666,
+          biotin: 777,
+          B12: 888,
+          C: 999,
+          D: 0000,
+          E: 1111,
+          K: 2222,
+        },
+        minerals: {
+          calcium: 3333,
+          chloride: 4444,
+          choline: 5555,
+          chromium: 6666,
+          copper: 7777,
+          folate: 8888,
+          iodine: 9999,
+          phosphorus: 000000,
+          potassium: 111111,
+          sodium: 222222,
+          magnesium: 333333,
+          manganese: 444444,
+          molybdenum: 555555,
+          niacin: 666666,
+          pantothenic: 777777,
+          riboflavin: 888888,
+          selenium: 999999,
+          thiamin: 00000000,
+          zinc: 11111111
+        }
+      }
+    }, 
+  },
+  'mushrooms': {
+    name: 'orange',
+    nutrition_facts: {
+      protein: 0.9,
+      fat: {
+        total: 0.1,
+        saturated: 0,
+        mono: 0,
+        poly: 0,
+        trans: -1
+      },
+      carbs: {
+        total: 11,
+        fiber: {
+          total: 000,
+          insoluble: 111,
+          soluble: 222
+        },
+        sugars: {
+          total: 333,
+          added: 444
+        }
+      },
+      micro: {
+        vitamins: {
+          A: 555,
+          B6: 666,
+          biotin: 777,
+          B12: 888,
+          C: 999,
+          D: 0000,
+          E: 1111,
+          K: 2222,
+        },
+        minerals: {
+          calcium: 3333,
+          chloride: 4444,
+          choline: 5555,
+          chromium: 6666,
+          copper: 7777,
+          folate: 8888,
+          iodine: 9999,
+          phosphorus: 000000,
+          potassium: 111111,
+          sodium: 222222,
+          magnesium: 333333,
+          manganese: 444444,
+          molybdenum: 555555,
+          niacin: 666666,
+          pantothenic: 777777,
+          riboflavin: 888888,
+          selenium: 999999,
+          thiamin: 00000000,
+          zinc: 11111111
+        }
+      }
+    }, 
+  },
+  'blueberries': {
+    name: 'orange',
+    nutrition_facts: {
+      protein: 0.9,
+      fat: {
+        total: 0.1,
+        saturated: 0,
+        mono: 0,
+        poly: 0,
+        trans: -1
+      },
+      carbs: {
+        total: 11,
+        fiber: {
+          total: 000,
+          insoluble: 111,
+          soluble: 222
+        },
+        sugars: {
+          total: 333,
+          added: 444
+        }
+      },
+      micro: {
+        vitamins: {
+          A: 555,
+          B6: 666,
+          biotin: 777,
+          B12: 888,
+          C: 999,
+          D: 0000,
+          E: 1111,
+          K: 2222,
+        },
+        minerals: {
+          calcium: 3333,
+          chloride: 4444,
+          choline: 5555,
+          chromium: 6666,
+          copper: 7777,
+          folate: 8888,
+          iodine: 9999,
+          phosphorus: 000000,
+          potassium: 111111,
+          sodium: 222222,
+          magnesium: 333333,
+          manganese: 444444,
+          molybdenum: 555555,
+          niacin: 666666,
+          pantothenic: 777777,
+          riboflavin: 888888,
+          selenium: 999999,
+          thiamin: 00000000,
+          zinc: 11111111
+        }
+      }
+    }, 
+  },
+  'pinkberries': {
+    name: 'orange',
+    nutrition_facts: {
+      protein: 0.9,
+      fat: {
+        total: 0.1,
+        saturated: 0,
+        mono: 0,
+        poly: 0,
+        trans: -1
+      },
+      carbs: {
+        total: 11,
+        fiber: {
+          total: 000,
+          insoluble: 111,
+          soluble: 222
+        },
+        sugars: {
+          total: 333,
+          added: 444
+        }
+      },
+      micro: {
+        vitamins: {
+          A: 555,
+          B6: 666,
+          biotin: 777,
+          B12: 888,
+          C: 999,
+          D: 0000,
+          E: 1111,
+          K: 2222,
+        },
+        minerals: {
+          calcium: 3333,
+          chloride: 4444,
+          choline: 5555,
+          chromium: 6666,
+          copper: 7777,
+          folate: 8888,
+          iodine: 9999,
+          phosphorus: 000000,
+          potassium: 111111,
+          sodium: 222222,
+          magnesium: 333333,
+          manganese: 444444,
+          molybdenum: 555555,
+          niacin: 666666,
+          pantothenic: 777777,
+          riboflavin: 888888,
+          selenium: 999999,
+          thiamin: 00000000,
+          zinc: 11111111
+        }
+      }
+    }, 
+  },
+  'orangeberries': {
+    name: 'orange',
+    nutrition_facts: {
+      protein: 0.9,
+      fat: {
+        total: 0.1,
+        saturated: 0,
+        mono: 0,
+        poly: 0,
+        trans: -1
+      },
+      carbs: {
+        total: 11,
+        fiber: {
+          total: 000,
+          insoluble: 111,
+          soluble: 222
+        },
+        sugars: {
+          total: 333,
+          added: 444
+        }
+      },
+      micro: {
+        vitamins: {
+          A: 555,
+          B6: 666,
+          biotin: 777,
+          B12: 888,
+          C: 999,
+          D: 0000,
+          E: 1111,
+          K: 2222,
+        },
+        minerals: {
+          calcium: 3333,
+          chloride: 4444,
+          choline: 5555,
+          chromium: 6666,
+          copper: 7777,
+          folate: 8888,
+          iodine: 9999,
+          phosphorus: 000000,
+          potassium: 111111,
+          sodium: 222222,
+          magnesium: 333333,
+          manganese: 444444,
+          molybdenum: 555555,
+          niacin: 666666,
+          pantothenic: 777777,
+          riboflavin: 888888,
+          selenium: 999999,
+          thiamin: 00000000,
+          zinc: 11111111
+        }
+      }
+    }, 
+  },
+  'pork': {
+    name: 'orange',
+    nutrition_facts: {
+      protein: 0.9,
+      fat: {
+        total: 0.1,
+        saturated: 0,
+        mono: 0,
+        poly: 0,
+        trans: -1
+      },
+      carbs: {
+        total: 11,
+        fiber: {
+          total: 000,
+          insoluble: 111,
+          soluble: 222
+        },
+        sugars: {
+          total: 333,
+          added: 444
+        }
+      },
+      micro: {
+        vitamins: {
+          A: 555,
+          B6: 666,
+          biotin: 777,
+          B12: 888,
+          C: 999,
+          D: 0000,
+          E: 1111,
+          K: 2222,
+        },
+        minerals: {
+          calcium: 3333,
+          chloride: 4444,
+          choline: 5555,
+          chromium: 6666,
+          copper: 7777,
+          folate: 8888,
+          iodine: 9999,
+          phosphorus: 000000,
+          potassium: 111111,
+          sodium: 222222,
+          magnesium: 333333,
+          manganese: 444444,
+          molybdenum: 555555,
+          niacin: 666666,
+          pantothenic: 777777,
+          riboflavin: 888888,
+          selenium: 999999,
+          thiamin: 00000000,
+          zinc: 11111111
+        }
+      }
+    }, 
+  },
+  'beef': {
+    name: 'orange',
+    nutrition_facts: {
+      protein: 0.9,
+      fat: {
+        total: 0.1,
+        saturated: 0,
+        mono: 0,
+        poly: 0,
+        trans: -1
+      },
+      carbs: {
+        total: 11,
+        fiber: {
+          total: 000,
+          insoluble: 111,
+          soluble: 222
+        },
+        sugars: {
+          total: 333,
+          added: 444
+        }
+      },
+      micro: {
+        vitamins: {
+          A: 555,
+          B6: 666,
+          biotin: 777,
+          B12: 888,
+          C: 999,
+          D: 0000,
+          E: 1111,
+          K: 2222,
+        },
+        minerals: {
+          calcium: 3333,
+          chloride: 4444,
+          choline: 5555,
+          chromium: 6666,
+          copper: 7777,
+          folate: 8888,
+          iodine: 9999,
+          phosphorus: 000000,
+          potassium: 111111,
+          sodium: 222222,
+          magnesium: 333333,
+          manganese: 444444,
+          molybdenum: 555555,
+          niacin: 666666,
+          pantothenic: 777777,
+          riboflavin: 888888,
+          selenium: 999999,
+          thiamin: 00000000,
+          zinc: 11111111
+        }
+      }
+    }, 
+  },
+  'applesauce': {
+    name: 'orange',
+    nutrition_facts: {
+      protein: 0.9,
+      fat: {
+        total: 0.1,
+        saturated: 0,
+        mono: 0,
+        poly: 0,
+        trans: -1
+      },
+      carbs: {
+        total: 11,
+        fiber: {
+          total: 000,
+          insoluble: 111,
+          soluble: 222
+        },
+        sugars: {
+          total: 333,
+          added: 444
+        }
+      },
+      micro: {
+        vitamins: {
+          A: 555,
+          B6: 666,
+          biotin: 777,
+          B12: 888,
+          C: 999,
+          D: 0000,
+          E: 1111,
+          K: 2222,
+        },
+        minerals: {
+          calcium: 3333,
+          chloride: 4444,
+          choline: 5555,
+          chromium: 6666,
+          copper: 7777,
+          folate: 8888,
+          iodine: 9999,
+          phosphorus: 000000,
+          potassium: 111111,
+          sodium: 222222,
+          magnesium: 333333,
+          manganese: 444444,
+          molybdenum: 555555,
+          niacin: 666666,
+          pantothenic: 777777,
+          riboflavin: 888888,
+          selenium: 999999,
+          thiamin: 00000000,
+          zinc: 11111111
+        }
+      }
+    }, 
+  },
+  'squash': {
+    name: 'orange',
+    nutrition_facts: {
+      protein: 0.9,
+      fat: {
+        total: 0.1,
+        saturated: 0,
+        mono: 0,
+        poly: 0,
+        trans: -1
+      },
+      carbs: {
+        total: 11,
+        fiber: {
+          total: 000,
+          insoluble: 111,
+          soluble: 222
+        },
+        sugars: {
+          total: 333,
+          added: 444
+        }
+      },
+      micro: {
+        vitamins: {
+          A: 555,
+          B6: 666,
+          biotin: 777,
+          B12: 888,
+          C: 999,
+          D: 0000,
+          E: 1111,
+          K: 2222,
+        },
+        minerals: {
+          calcium: 3333,
+          chloride: 4444,
+          choline: 5555,
+          chromium: 6666,
+          copper: 7777,
+          folate: 8888,
+          iodine: 9999,
+          phosphorus: 000000,
+          potassium: 111111,
+          sodium: 222222,
+          magnesium: 333333,
+          manganese: 444444,
+          molybdenum: 555555,
+          niacin: 666666,
+          pantothenic: 777777,
+          riboflavin: 888888,
+          selenium: 999999,
+          thiamin: 00000000,
+          zinc: 11111111
+        }
+      }
+    }, 
+  },
+
 };
 
 // ===========================================================
