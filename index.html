@@ -10,79 +10,155 @@
  
 
   <div class="container mt-3">
+    <div class="row mb-4">
+      <div class="card bg-dark text-white">
+        <div class="card-body">
+          <h5 class="card-title">Meal 1</h5>
+          <h6 class="card-subtitle mb-2 text-muted">6am</h6>
 
-    <table id="main-table" class="table table-dark table-hover table-striped">
-      <thead>
-        <tr>
-          <th scope="col">Food</th>
-          <th scope="col">Servings</th>
-          <th scope="col">Protein</th>
-          <th scope="col">Carbs</th>
-          <th scope="col">Fat</th>
-          <th scope="col">Calories</th>
-        </tr>
-      </thead>
-      <tbody>
+            <table id="table-0" class="table table-dark table-hover table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">Food</th>
+                  <th scope="col">Servings</th>
+                  <th scope="col">Protein</th>
+                  <th scope="col">Carbs</th>
+                  <th scope="col">Fat</th>
+                  <th scope="col">Calories</th>
+                </tr>
+              </thead>
+              <tbody>
 
-        <tr id="totals-row">
-          <th scope="row">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-day0-goals">
-              Totals
+                <tr id="totals-row">
+                  <th scope="row">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-day0-goals">
+                      Totals
+                    </button>
+                  </th>
+                  <td></td>
+                  <td id="totals-protein"></td>
+                  <td id="totals-carbs"></td>
+                  <td id="totals-fat"></td>
+                  <td id="totals-cals"></td>
+                </tr>
+
+                <tr id="goals-row">
+                  <th scope="row">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-day0-goals">
+                      Goals
+                    </button>
+                  </th>
+                  <td></td>
+                  <td>
+                    <input type="number" class="form-control" id="goals-input-field-protein" style="width: 100%;" value="160">
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <input type="number" class="form-control" id="goals-input-field-cals" style="width: 100%;" value="2000">
+                  </td>
+                </tr>
+
+                <tr id="goals-row">
+                  <th scope="row">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-day0-goals">
+                      % Met
+                    </button>
+                  </th>
+                  <td></td>
+                  <td id="percent-met-protein"></td>
+                  <td></td>
+                  <td></td>
+                  <td id="percent-met-cals"></td>
+                </tr>
+
+              </tbody>
+            </table>
+
+            <!-- Add Food Button -->
+            <button id="add-food-button" type="button" class="btn btn-secondary">
+              Add Food
             </button>
-          </th>
-          <td></td>
-          <td id="totals-protein"></td>
-          <td id="totals-carbs"></td>
-          <td id="totals-fat"></td>
-          <td id="totals-cals"></td>
-        </tr>
 
-        <tr id="goals-row">
-          <th scope="row">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-day0-goals">
-              Goals
+        </div>
+      </div>
+    </div> <!-- /.row -->
+
+    <div class="row">
+      <div class="card bg-dark text-white">
+        <div class="card-body">
+          <h5 class="card-title">Meal 2</h5>
+          <h6 class="card-subtitle mb-2 text-muted">8am</h6>
+
+            <table id="table-0" class="table table-dark table-hover table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">Food</th>
+                  <th scope="col">Servings</th>
+                  <th scope="col">Protein</th>
+                  <th scope="col">Carbs</th>
+                  <th scope="col">Fat</th>
+                  <th scope="col">Calories</th>
+                </tr>
+              </thead>
+              <tbody>
+
+                <tr id="totals-row">
+                  <th scope="row">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-day0-goals">
+                      Totals
+                    </button>
+                  </th>
+                  <td></td>
+                  <td id="totals-protein"></td>
+                  <td id="totals-carbs"></td>
+                  <td id="totals-fat"></td>
+                  <td id="totals-cals"></td>
+                </tr>
+
+                <tr id="goals-row">
+                  <th scope="row">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-day0-goals">
+                      Goals
+                    </button>
+                  </th>
+                  <td></td>
+                  <td>
+                    <input type="number" class="form-control" id="goals-input-field-protein" style="width: 100%;" value="160">
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <input type="number" class="form-control" id="goals-input-field-cals" style="width: 100%;" value="2000">
+                  </td>
+                </tr>
+
+                <tr id="goals-row">
+                  <th scope="row">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-day0-goals">
+                      % Met
+                    </button>
+                  </th>
+                  <td></td>
+                  <td id="percent-met-protein"></td>
+                  <td></td>
+                  <td></td>
+                  <td id="percent-met-cals"></td>
+                </tr>
+
+              </tbody>
+            </table>
+
+            <!-- Add Food Button -->
+            <button id="add-food-button" type="button" class="btn btn-secondary">
+              Add Food
             </button>
-          </th>
-          <td></td>
-          <td>
-            <input type="number" class="form-control" id="goals-input-field-protein" style="width: 100%;" value="160">
-          </td>
-          <td></td>
-          <td></td>
-          <td>
-            <input type="number" class="form-control" id="goals-input-field-cals" style="width: 100%;" value="2000">
-          </td>
-        </tr>
+        </div>
+      </div>
+    </div> <!-- /.row -->
 
-
-        <tr id="goals-row">
-          <th scope="row">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-day0-goals">
-              % Met
-            </button>
-          </th>
-          <td></td>
-          <td id="percent-met-protein"></td>
-          <td></td>
-          <td></td>
-          <td id="percent-met-cals"></td>
-        </tr>
-
-      </tbody>
-    </table>
-    <style>
-      table {
-        table-layout: fixed;
-      }
-    </style>
-
-
-    <!-- Add Food Button -->
-    <button id="add-food-button" type="button" class="btn btn-secondary">
-      Add Food
-    </button>
-
-  </div>
+  </div> <!-- /.container -->
+  
 
   <!-- Modals -->
   <!-- Modals -->

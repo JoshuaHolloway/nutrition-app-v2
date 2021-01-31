@@ -34,3 +34,10 @@ $utilities: map-merge(
 
 @import '../node_modules/bootstrap/scss/bootstrap.scss';
 @import 'style';
+
+// ========================================================
+
+.card {
+  border: solid $gray-700 4px;
+  border-radius: 10px;
+}

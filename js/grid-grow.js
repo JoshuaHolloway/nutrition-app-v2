@@ -3,8 +3,8 @@ let num_rows = 0;
 // ==============================================
 
 // const grid = document.querySelector('.grid-container');
-const main_table_node = document.querySelector('#main-table');
-const main_table_body_node = main_table_node.querySelector('tbody');
+const table0_node = document.querySelector('#table-0');
+const table0_body_node = table0_node.querySelector('tbody');
 const add_food_button = document.querySelector('#add-food-button');
 
 // ==============================================
@@ -57,7 +57,7 @@ add_food_button.addEventListener('click', () => {
   // Add new row to table
   const totals_row_node = qs('#totals-row');
   // main_table_body_node.append(new_row);
-  main_table_body_node.insertBefore(new_row_node, totals_row_node);
+  table0_body_node.insertBefore(new_row_node, totals_row_node);
 
   // Set inner text in drop down:
   // -id=food# based on row-num

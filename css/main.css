@@ -10143,3 +10143,12 @@ body {
 button {
   width: 100%;
 }
+
+table {
+  table-layout: fixed;
+}
+
+.card {
+  border: solid #495057 4px;
+  border-radius: 10px;
+}
