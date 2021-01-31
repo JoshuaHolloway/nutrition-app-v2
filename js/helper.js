@@ -50,53 +50,66 @@ const append_li = (row_num, a_class_name, innerText) => {
     const row_input_field = qs(`#serving-input-${row_num}`);
     row_input_field.addEventListener('change', () => {
 
-      console.log('row-num: ', row_num);
-      console.log('food_name: ', food_name);
-
-      // Update servings in foods object with 
       const servings = row_input_field.value
-      foods[food_name].servings = servings;
+      if (row_input_field.value >= 0) {
 
-      const protein = servings * known_foods[food_name].nutrition_facts.protein;
-      foods[food_name].protein = protein;
+        // Update servings in foods object with 
+        foods[food_name].servings = servings;
 
-      const carbs = servings * known_foods[food_name].nutrition_facts.carbs.total;
-      foods[food_name].carbs = carbs;
+        const protein = servings * known_foods[food_name].nutrition_facts.protein;
+        foods[food_name].protein = protein;
 
-      const fat = servings * known_foods[food_name].nutrition_facts.fat.total;
-      foods[food_name].fat = fat;
+        const carbs = servings * known_foods[food_name].nutrition_facts.carbs.total;
+        foods[food_name].carbs = carbs;
 
-      const cals = fat * 9 + carbs * 4 + protein * 4;
-      foods[food_name].cals = cals;
+        const fat = servings * known_foods[food_name].nutrition_facts.fat.total;
+        foods[food_name].fat = fat;
 
-      // Update totals:
-      let total_protein = 0;
-      let total_fat = 0;
-      let total_carbs = 0;
-      let total_cals = 0;
-      const food_names = Object.keys(foods);
-      food_names.forEach((food_key) => {
-        total_protein += foods[food_key].protein;
-        total_fat += foods[food_key].fat;
-        total_carbs += foods[food_key].carbs;
-        total_cals += foods[food_key].cals;
-      });
+        const cals = fat * 9 + carbs * 4 + protein * 4;
+        foods[food_name].cals = cals;
+
+        // Update totals:
+        let total_protein = 0;
+        let total_fat = 0;
+        let total_carbs = 0;
+        let total_cals = 0;
+
+        const food_names = Object.keys(foods);
+        food_names.forEach((food_key) => {
+          total_protein += foods[food_key].protein;
+          total_fat += foods[food_key].fat;
+          total_carbs += foods[food_key].carbs;
+          total_cals += foods[food_key].cals;
+        });
+
+        // Grab values of goals:
+        const goal_protein = qs('#goals-input-field-protein').value;
+        const goal_cals = qs('#goals-input-field-cals').value;
+
+        // Compute %-met:
+        const percent_met_protein = (total_protein / goal_protein) * 100;
+        const percent_met_cals = (total_cals / goal_cals) * 100;
+
+        const update_td = (target, nutrient_val) => {
+          const td = qs(target);
+          td.innerText = nutrient_val.toFixed(1);
+        };
+
+        // Update data in current row:
+        //<td id="food${row_num}-protein">0</td>
+        update_td(`#food${row_num}-protein`, protein);
+        update_td(`#food${row_num}-carbs`, carbs);
+        update_td(`#food${row_num}-fat`, fat);
+        update_td(`#food${row_num}-cals`, cals);
+        update_td('#totals-protein', total_protein);
+        update_td('#totals-fat', total_fat);
+        update_td('#totals-carbs', total_carbs);
+        update_td('#totals-cals', total_cals);
+        qs('#percent-met-protein').innerText = `${percent_met_protein.toFixed(1)}%`;
+        qs('#percent-met-cals').innerText = `${percent_met_cals.toFixed(1)}%`
+
+      } else { row_input_field.value = 0; }// if (serving >= 0)
       
-      const update_td = (target, nutrient_val) => {
-        const td = qs(target);
-        td.innerText = nutrient_val.toFixed(1);
-      };
-
-      // Update data in current row:
-      //<td id="food${row_num}-protein">0</td>
-      update_td(`#food${row_num}-protein`, protein);
-      update_td(`#food${row_num}-carbs`, carbs);
-      update_td(`#food${row_num}-fat`, fat);
-      update_td(`#food${row_num}-cals`, cals);
-      update_td(`#totals-protein`, total_protein);
-      update_td(`#totals-fat`, total_fat);
-      update_td(`#totals-carbs`, total_carbs);
-      update_td(`#totals-cals`, total_cals);
     });
   });
 };
