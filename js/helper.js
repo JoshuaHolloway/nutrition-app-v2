@@ -50,6 +50,9 @@ const append_li = (row_num, a_class_name, innerText) => {
     const row_input_field = qs(`#serving-input-${row_num}`);
     row_input_field.addEventListener('change', () => {
 
+      console.log('row-num: ', row_num);
+      console.log('food_name: ', food_name);
+
       // Update servings in foods object with 
       const servings = row_input_field.value
       foods[food_name].servings = servings;
@@ -60,6 +63,12 @@ const append_li = (row_num, a_class_name, innerText) => {
       const carbs = servings * known_foods[food_name].nutrition_facts.carbs.total;
       foods[food_name].carbs = carbs;
 
+      const fat = servings * known_foods[food_name].nutrition_facts.fat.total;
+      foods[food_name].fat = fat;
+
+
+      const cals = fat * 9 + carbs * 4 + protein * 4;
+      foods[food_name].cals = cals;
       
       // Update data in table:
       //<td id="food${row_num}-protein">0</td>
@@ -69,6 +78,11 @@ const append_li = (row_num, a_class_name, innerText) => {
       const td_carbs = qs(`#food${row_num}-carbs`);
       td_carbs.innerText = carbs.toFixed(1);
 
+      const td_fat = qs(`#food${row_num}-fat`);
+      td_fat.innerText = fat.toFixed(1);
+
+      const td_cals = qs(`#food${row_num}-cals`);
+      td_cals.innerText = cals.toFixed(1);
 
     });
   });

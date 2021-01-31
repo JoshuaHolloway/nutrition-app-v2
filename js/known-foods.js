@@ -68,16 +68,16 @@ const known_foods = {
   'orange': {
     name: 'orange',
     nutrition_facts: {
-      protein: 1.3,
+      protein: 0.9,
       fat: {
-        total: 0.4,
-        saturated: 11,
-        mono: 22,
-        poly: 33,
-        trans: 44
+        total: 0.1,
+        saturated: 0,
+        mono: 0,
+        poly: 0,
+        trans: -1
       },
       carbs: {
-        total: 27,
+        total: 11,
         fiber: {
           total: 000,
           insoluble: 111,
