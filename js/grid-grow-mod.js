@@ -40,10 +40,10 @@ add_food_button.addEventListener('click', () => {
       <input type="number" class="form-control" id="serving-input-${row_num}" style="width: 100%;">
     </td>
 
-    <td>1</td>
-    <td>2</td>
-    <td>3</td>
-    <td>4</td>
+    <td id="food${row_num}-protein">0</td>
+    <td id="food${row_num}-carbs">0</td>
+    <td id="food${row_num}-fat">0</td>
+    <td id="food${row_num}-cals">0</td>
     `;
 
   // RIGHT HERE (mon)

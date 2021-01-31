@@ -20,14 +20,22 @@ const append_li = (row_num, a_class_name, innerText) => {
   // food${row_num}_dropdown_button_text
   const dropdown_button_HTML_elem_parent = qs(`#dropdown-button_food${row_num}`).parentElement;
 
+  // -When new food is chosen from dropdown menu, do the following:
   li.addEventListener('click', () => {
     console.log(`${innerText} clicked`);
     
     // Add food data to foods object
     const food_name = innerText;
+
+    // Create structure of property for this food here:
     const food_data_obj = known_foods[food_name];
-    foods[food_name] = food_data_obj;
-    foods[food_name].servings = 0;
+    //foods[food_name] = food_data_obj;
+    foods[food_name] = {
+      servings: 0,
+      protein: 0,
+      carbs: 0,
+      fat: 0
+    };
     
     dropdown_button_HTML_elem_parent.innerHTML = 
       `<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-${row_num}">
@@ -37,6 +45,32 @@ const append_li = (row_num, a_class_name, innerText) => {
     // Create corresponding modal and append to body
     generate_modal(row_num, food_data_obj);
 
+    // Add event listener to input field
+    // <input type="number" class="form-control" id="serving-input-${row_num}" style="width: 100%;">
+    const row_input_field = qs(`#serving-input-${row_num}`);
+    row_input_field.addEventListener('change', () => {
+
+      // Update servings in foods object with 
+      const servings = row_input_field.value
+      foods[food_name].servings = servings;
+
+      const protein = servings * known_foods[food_name].nutrition_facts.protein;
+      foods[food_name].protein = protein;
+
+      const carbs = servings * known_foods[food_name].nutrition_facts.carbs.total;
+      foods[food_name].carbs = carbs;
+
+      
+      // Update data in table:
+      //<td id="food${row_num}-protein">0</td>
+      const td_protein = qs(`#food${row_num}-protein`);
+      td_protein.innerText = protein.toFixed(1);
+
+      const td_carbs = qs(`#food${row_num}-carbs`);
+      td_carbs.innerText = carbs.toFixed(1);
+
+
+    });
   });
 };
 
