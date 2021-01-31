@@ -22,6 +22,7 @@ const append_li = (row_num, a_class_name, innerText) => {
 
   // -When new food is chosen from dropdown menu, do the following:
   li.addEventListener('click', () => {
+
     console.log(`${innerText} clicked`);
     
     // Add food data to foods object
@@ -29,8 +30,8 @@ const append_li = (row_num, a_class_name, innerText) => {
 
     // Create structure of property for this food here:
     const food_data_obj = known_foods[food_name];
-    //foods[food_name] = food_data_obj;
-    foods[food_name] = {
+    //table[food_name] = food_data_obj;
+    table.foods[food_name] = {
       servings: 0,
       protein: 0,
       carbs: 0,
@@ -50,42 +51,61 @@ const append_li = (row_num, a_class_name, innerText) => {
     const row_input_field = qs(`#serving-input-${row_num}`);
     row_input_field.addEventListener('change', () => {
 
+      console.log('servings input field changed');
+
       const servings = row_input_field.value
       if (row_input_field.value >= 0) {
 
-        // Update servings in foods object with 
-        foods[food_name].servings = servings;
+        // Update servings in table object with 
+        table.foods[food_name].servings = servings;
 
         const protein = servings * known_foods[food_name].nutrition_facts.protein;
-        foods[food_name].protein = protein;
+        table.foods[food_name].protein = protein;
 
         const carbs = servings * known_foods[food_name].nutrition_facts.carbs.total;
-        foods[food_name].carbs = carbs;
+        table.foods[food_name].carbs = carbs;
 
         const fat = servings * known_foods[food_name].nutrition_facts.fat.total;
-        foods[food_name].fat = fat;
+        table.foods[food_name].fat = fat;
 
         const cals = fat * 9 + carbs * 4 + protein * 4;
-        foods[food_name].cals = cals;
+        table.foods[food_name].cals = cals;
 
         // Update totals:
+  
         let total_protein = 0;
         let total_fat = 0;
         let total_carbs = 0;
         let total_cals = 0;
 
-        const food_names = Object.keys(foods);
+        const food_names = Object.keys(table.foods);
         food_names.forEach((food_key) => {
-          total_protein += foods[food_key].protein;
-          total_fat += foods[food_key].fat;
-          total_carbs += foods[food_key].carbs;
-          total_cals += foods[food_key].cals;
+          total_protein += table.foods[food_key].protein;
+          total_fat += table.foods[food_key].fat;
+          total_carbs += table.foods[food_key].carbs;
+          total_cals += table.foods[food_key].cals;
         });
 
         // Grab values of goals:
         const goal_protein = qs('#goals-input-field-protein').value;
         const goal_cals = qs('#goals-input-field-cals').value;
 
+        // Store values in foods object for table in order to use later
+        table['total_protein'] = total_protein;
+        table['total_fat'] = total_fat;
+        table['total_carbs'] = total_carbs;
+        table['total_cals'] = total_cals; 
+        table['goal_protein'] = goal_protein;
+        table['goal_cals'] = goal_cals;
+
+        // -Update event listeners for goal row to incorporate new data
+        // -I think if I had a method inside the foods object to recompute the totals then I could call it here
+        //  and then set the listeners for the goal fields only once and in the following function I simply 
+        //  invoke those re-computation of totals methods in the event listeners for the change event on the
+        //  fields for the goals
+        overwrite_event_listeners_for_goal_fields();
+        // debugger;
+        
         // Compute %-met:
         const percent_met_protein = (total_protein / goal_protein) * 100;
         const percent_met_cals = (total_cals / goal_cals) * 100;
@@ -102,6 +122,8 @@ const append_li = (row_num, a_class_name, innerText) => {
         update_td(`#food${row_num}-fat`, fat);
         update_td(`#food${row_num}-cals`, cals);
         update_td('#totals-protein', total_protein);
+       
+
         update_td('#totals-fat', total_fat);
         update_td('#totals-carbs', total_carbs);
         update_td('#totals-cals', total_cals);
@@ -116,10 +138,47 @@ const append_li = (row_num, a_class_name, innerText) => {
 
 // ========================================================
 
+const overwrite_event_listeners_for_goal_fields = () => {
+  const goal_input_field_protein = qs('#goals-input-field-protein');
+  const goal_input_field_cals = qs('#goals-input-field-cals');
+
+  goal_input_field_protein.addEventListener('change', () => {
+    debugger;
+    // Grab new value of goal:
+    const goal_protein = goal_input_field_protein.value;
+    table.goal_protein = goal_protein; // update goal_protein globally
+
+
+    console.log('changed protein goal');
+    console.log('table.foods.goal_protein: ', table.goal_protein);
+
+    // Compute %-met:
+    const percent_met_protein = (table.total_protein / goal_protein) * 100;
+
+    // Update %-met row:
+    qs('#percent-met-protein').innerText = `${percent_met_protein.toFixed(1)}%`;
+
+  });
+
+  goal_input_field_cals.addEventListener('change', () => {
+    // Grab new value of goal:
+    const goal_cals = goal_input_field_cals.value;
+    table.goal_cals = goal_cals; // update goal_cals globally
+
+    // Compute %-met:
+    const percent_met_cals = (table.total_cals / goal_cals) * 100;
+
+    // Update %-met row:
+    qs('#percent-met-cals').innerText = `${percent_met_cals.toFixed(1)}%`
+  });
+};
+
+// ========================================================
+
 const known_foods_not_in_table = () => {
 
   const known_foods_keys = Object.keys(known_foods);
-  const foods_keys = Object.keys(foods);
+  const foods_keys = Object.keys(table.foods);
 
   //const known_foods_not_in_table_obj = {};
   //const known_foods_not_in_table_arr = [];
