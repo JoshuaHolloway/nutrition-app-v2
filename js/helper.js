@@ -71,13 +71,17 @@ const append_li = (row_num, a_class_name, innerText) => {
 
       // Update totals:
       let total_protein = 0;
+      let total_fat = 0;
+      let total_carbs = 0;
+      let total_cals = 0;
       const food_names = Object.keys(foods);
       food_names.forEach((food_key) => {
         total_protein += foods[food_key].protein;
+        total_fat += foods[food_key].fat;
+        total_carbs += foods[food_key].carbs;
+        total_cals += foods[food_key].cals;
       });
-      console.log('total protein: ', total_protein);
-
-
+      
       const update_td = (target, nutrient_val) => {
         const td = qs(target);
         td.innerText = nutrient_val.toFixed(1);
@@ -85,26 +89,14 @@ const append_li = (row_num, a_class_name, innerText) => {
 
       // Update data in current row:
       //<td id="food${row_num}-protein">0</td>
-      // const td_protein = qs(`#food${row_num}-protein`);
-      // td_protein.innerText = protein.toFixed(1);
       update_td(`#food${row_num}-protein`, protein);
-
-      // const td_carbs = qs(`#food${row_num}-carbs`);
-      // td_carbs.innerText = carbs.toFixed(1);
       update_td(`#food${row_num}-carbs`, carbs);
-
-      // const td_fat = qs(`#food${row_num}-fat`);
-      // td_fat.innerText = fat.toFixed(1);
       update_td(`#food${row_num}-fat`, fat);
-
-      // const td_cals = qs(`#food${row_num}-cals`);
-      // td_cals.innerText = cals.toFixed(1);
       update_td(`#food${row_num}-cals`, cals);
-
-      // const td_totals_protein = qs(`#totals-protein`);
-      // td_totals_protein.innerText = total_protein.toFixed(1);
       update_td(`#totals-protein`, total_protein);
-
+      update_td(`#totals-fat`, total_fat);
+      update_td(`#totals-carbs`, total_carbs);
+      update_td(`#totals-cals`, total_cals);
     });
   });
 };
