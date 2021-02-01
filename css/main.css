@@ -10148,7 +10148,7 @@ table {
   table-layout: fixed;
 }
 
-.card {
+.card, #main-window {
   border: solid #495057 4px;
   border-radius: 10px;
 }

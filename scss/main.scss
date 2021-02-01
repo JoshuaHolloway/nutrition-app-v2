@@ -37,10 +37,13 @@ $utilities: map-merge(
 
 // ========================================================
 
-.card {
+.card, #main-window {
   border: solid $gray-700 4px;
   border-radius: 10px;
 }
+// #main-window {
+//   padding: 1%;
+// }
 
 // buttons for totals, goals, and %-met rows:
 .button-dark {
