@@ -41,3 +41,14 @@ $utilities: map-merge(
   border: solid $gray-700 4px;
   border-radius: 10px;
 }
+
+// buttons for totals, goals, and %-met rows:
+.button-dark {
+  background: $dark;
+  border: white solid 1px;
+  color: white;
+}
+
+.btn {
+  border-radius: 3px;
+}

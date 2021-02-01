@@ -10152,3 +10152,13 @@ table {
   border: solid #495057 4px;
   border-radius: 10px;
 }
+
+.button-dark {
+  background: #121212;
+  border: white solid 1px;
+  color: white;
+}
+
+.btn {
+  border-radius: 3px;
+}
