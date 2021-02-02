@@ -36,7 +36,7 @@
                 <h5 class="card-title">Meal 1</h5>
                 <h6 class="card-subtitle mb-2 text-muted">6am</h6>
       
-                  <table id="table-0" class="table table-dark table-hover table-striped">
+                  <table id="day0-table0" class="day0-tables table table-dark table-hover table-striped">
                     <thead>
                       <tr>
                         <th scope="col">Food</th>
@@ -47,26 +47,26 @@
                         <th scope="col">Calories</th>
                       </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="tbody-day0-meal0">
       
-                      <tr id="totals-row">
+                      <tr class="day0-totals-rows">
                         <th scope="row">
                           <button type="button" class="btn  button-dark" data-bs-toggle="modal" data-bs-target="#modal-day0-totals">
                             Meal Totals
                           </button>
                         </th>
                         <td></td>
-                        <td id="totals-protein"></td>
-                        <td id="totals-carbs"></td>
-                        <td id="totals-fat"></td>
-                        <td id="totals-cals"></td>
+                        <td id="day0-meal0-totals-protein" class="day0-totals-protein"></td>
+                        <td id="day0-meal0-totals-carbs"   class="day0-totals-carbs"></td>
+                        <td id="day0-meal0-totals-fat"     class="day0-totals-fat"></td>
+                        <td id="day0-meal0-totals-cals"    class="day0-totals-cals"></td>
                       </tr>
       
                     </tbody>
                   </table>
       
                   <!-- Add Food Button -->
-                  <button id="add-food-button-table-0" type="button" class="btn btn-secondary">
+                  <button id="add-food-button-day0-meal0" type="button" class="btn btn-secondary add-food-button-day0">
                     Add Food
                   </button>
       
@@ -81,7 +81,7 @@
                 <h5 class="card-title">Meal 2</h5>
                 <h6 class="card-subtitle mb-2 text-muted">8am</h6>
       
-                  <table id="table-0" class="table table-dark table-hover table-striped">
+                  <table id="day0-table1" class="day0-tables table table-dark table-hover table-striped">
                     <thead>
                       <tr>
                         <th scope="col">Food</th>
@@ -94,39 +94,38 @@
                     </thead>
                     <tbody>
       
-                      <tr id="totals-row">
+                      <tr class="day0-totals-rows">
                         <th scope="row">
                           <button type="button" class="btn button-dark" data-bs-toggle="modal" data-bs-target="#modal-day0-goals">
                             Meal Totals
                           </button>
                         </th>
                         <td></td>
-                        <td id="totals-protein"></td>
-                        <td id="totals-carbs"></td>
-                        <td id="totals-fat"></td>
-                        <td id="totals-cals"></td>
+                        <td id="day0-meal1-totals-protein" class="day0-totals-protein"></td>
+                        <td id="day0-meal1-totals-carbs"   class="day0-totals-carbs"></td>
+                        <td id="day0-meal1-totals-fat"     class="day0-totals-fat"></td>
+                        <td id="day0-meal1-totals-cals"    class="day0-totals-cals"></td>
                       </tr>
-      
 
                     </tbody>
                   </table>
       
                   <!-- Add Food Button -->
-                  <button id="add-food-button" type="button" class="btn btn-secondary">
+                  <button id="add-food-button-day0-meal1" type="button" class="btn btn-secondary add-food-button-day0">
                     Add Food
                   </button>
               </div>
             </div>
           </div> <!-- /.row -->
 
-          <!-- meal-1 -->
+          <!-- day-summary -->
           <div class="row">
             <div class="card bg-dark text-white">
               <div class="card-body">
                 <h5 class="card-title">Day Summary</h5>
                 <h6 class="card-subtitle mb-2 text-muted">Feb. 1</h6>
       
-                  <table id="table-0" class="table table-dark table-hover table-striped">
+                  <table id="day0-table-summary" class="day0-tables table table-dark table-hover table-striped">
                     <thead>
                       <tr>
                         <th scope="col">Food</th>
@@ -139,17 +138,17 @@
                     </thead>
                     <tbody>
       
-                      <tr id="totals-row">
+                      <tr  id="day0-totals-row-summary">
                         <th scope="row">
                           <button type="button" class="btn button-dark" data-bs-toggle="modal" data-bs-target="#modal-day0-goals">
                             Totals
                           </button>
                         </th>
                         <td></td>
-                        <td id="totals-protein"></td>
-                        <td id="totals-carbs"></td>
-                        <td id="totals-fat"></td>
-                        <td id="totals-cals"></td>
+                        <td id="day0-summary-totals-protein" class="day0-summary-totals-protein"></td>
+                        <td id="day0-summary-totals-carbs"   class="day0-summary-totals-carbs"></td>
+                        <td id="day0-summary-totals-fat"     class="day0-summary-totals-fat"></td>
+                        <td id="day0-summary-totals-cals"    class="day0-summary-totals-cals"></td>
                       </tr>
       
                       <tr id="goals-row">
@@ -234,6 +233,8 @@
     </div>
   </div>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+  
   <script src="./js/helper.js"></script>
   <script src="./js/table.js"></script>
   <script src="./js/main.js"></script>
