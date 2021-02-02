@@ -137,14 +137,14 @@ const append_li = (meal_num, row_num, a_class_name, innerText) => {
         // <td id="day0-meal0-totals-carbs"   class="day0-totals-carbs"></td>
         // <td id="day0-meal0-totals-fat"     class="day0-totals-fat"></td>
         // <td id="day0-meal0-totals-cals"    class="day0-totals-cals"></td>
-        const total_protein_for_day_meals_node = document.querySelectorAll('.day0-totals-protein');
-        total_protein_for_day_meals_node.innerText = total_protein;
+        const total_protein_for_day_meals_nodes = document.querySelectorAll('.day0-totals-protein');
+        total_protein_for_day_meals_nodes[meal_num].innerText = total_protein;
 
 
 
         // TODO: Compute totals for overall day:
         //const day_summary_totals_protein = document.querySelectorAll('.day0-totals-protein')[meals.length]; // meals.length is one less than number of tables
-        const day_summary_total_protein = document.querySelector('#day0-meal0-totals-protein');
+        const day_summary_total_protein = document.querySelector('#day0-summary-totals-protein');
                         // <td id="day0-meal0-totals-protein" class="day0-totals-protein"></td>
                         // <td id="day0-meal0-totals-carbs"   class="day0-totals-carbs"></td>
                         // <td id="day0-meal0-totals-fat"     class="day0-totals-fat"></td>
