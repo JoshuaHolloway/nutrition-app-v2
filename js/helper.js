@@ -28,6 +28,9 @@ const append_li = (meal_num, row_num, a_class_name, innerText) => {
     // Add food data to foods object
     const food_name = innerText;
 
+
+    
+    
     // Create structure of property for this food here:
     const food_data_obj = known_foods[food_name];
     //table[food_name] = food_data_obj;
@@ -39,12 +42,40 @@ const append_li = (meal_num, row_num, a_class_name, innerText) => {
     };
     
     dropdown_button_HTML_elem_parent.innerHTML = 
-      `<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-${row_num}">
-        ${food_name}
-      </button>`;
-
+    `<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-${row_num}">
+    ${food_name}
+    </button>`;
+    
     // Create corresponding modal and append to body
     generate_modal(row_num, food_data_obj);
+    
+
+    // -Need to get the document corresponding to the id=meal_num
+    //  and grab the foods property of that object.
+
+    // Get an individual document from a collection
+
+
+    const update_servings_in_db = (food_name, servings) => {
+      week0_db.collection('day0-collection').doc({ id: meal_num }).get().then(document => {
+        // -Fire .doc() method with obj as arg with selection criteria.
+        // -Trigger .get() method, which returns a promise with the document.
+        console.log(document);
+        return document;
+      }).then(function(document) {
+        console.log('results: ', document);
+        // -Generate row in database (property of current meal document)
+        week0_db.collection('day0-collection').doc({ id: meal_num }).update({
+          // foods: {...foods, food_name: {servings: 0} }
+          foods: {...document.foods, [`${food_name}`]: Number(servings)}
+          // -I want to add a new property to the set of current properties of the document with
+        });
+      });
+    };
+    update_servings_in_db(food_name, 0);
+
+
+
 
     // Add event listener to input field
     // <input type="number" class="form-control" id="serving-input-${row_num}" style="width: 100%;">
@@ -54,7 +85,10 @@ const append_li = (meal_num, row_num, a_class_name, innerText) => {
       console.log('servings input field changed');
 
       const servings = row_input_field.value
-      if (row_input_field.value >= 0) {
+      if (servings >= 0) {
+
+        // -Update the serving in the document
+        update_servings_in_db(food_name, servings);
 
         // Update servings in table object with 
         meals[meal_num].foods[food_name].servings = servings;
@@ -118,9 +152,9 @@ const append_li = (meal_num, row_num, a_class_name, innerText) => {
         // Update data in current row:
         //<td id="food${row_num}-protein">0</td>
         update_td(`#food${row_num}-protein`, protein);
-        // update_td(`#food${row_num}-carbs`, carbs);
-        // update_td(`#food${row_num}-fat`, fat);
-        // update_td(`#food${row_num}-cals`, cals);
+        update_td(`#food${row_num}-carbs`, carbs);
+        update_td(`#food${row_num}-fat`, fat);
+        update_td(`#food${row_num}-cals`, cals);
         // update_td('#totals-protein', total_protein);
        
 
@@ -144,18 +178,28 @@ const append_li = (meal_num, row_num, a_class_name, innerText) => {
 
         // TODO: Compute totals for overall day:
         //const day_summary_totals_protein = document.querySelectorAll('.day0-totals-protein')[meals.length]; // meals.length is one less than number of tables
-        const day_summary_total_protein = document.querySelector('#day0-summary-totals-protein');
-                        // <td id="day0-meal0-totals-protein" class="day0-totals-protein"></td>
-                        // <td id="day0-meal0-totals-carbs"   class="day0-totals-carbs"></td>
-                        // <td id="day0-meal0-totals-fat"     class="day0-totals-fat"></td>
-                        // <td id="day0-meal0-totals-cals"    class="day0-totals-cals"></td>
+        const day_summary_total_protein_node = document.querySelector('#day0-summary-totals-protein');
+        const day_summary_total_carbs_node = document.querySelector('#day0-summary-totals-carbs');
+        const day_summary_total_fat_node = document.querySelector('#day0-summary-totals-fat');
+        const day_summary_total_cals_node = document.querySelector('#day0-summary-totals-cals');
+
 
         // TODO: Loop over all totals:
         let day_total_protein = 0;
+        let day_total_carbs = 0;
+        let day_total_fat = 0;
+        let day_total_cals = 0;
         meals.forEach((meal, meal_idx) => {
           day_total_protein += meal.total_protein;
+          day_total_carbs += meal.total_carbs;
+          day_total_fat += meal.total_fat;
+          day_total_cals += meal.total_cals;
         });
-        day_summary_total_protein.innerText = day_total_protein;
+        day_summary_total_protein_node.innerText = day_total_protein.toFixed(1);
+        day_summary_total_carbs_node.innerText = day_total_carbs.toFixed(1);
+        day_summary_total_fat_node.innerText = day_total_fat.toFixed(1);
+        day_summary_total_cals_node.innerText = day_total_cals.toFixed(1);
+
 
 
       } else { row_input_field.value = 0; }// if (serving >= 0)

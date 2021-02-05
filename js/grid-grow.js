@@ -28,24 +28,6 @@ const add_food_buttons_day0 = document.querySelectorAll('.add-food-button-day0')
 
 add_food_buttons_day0.forEach((add_food_button_day0, meal_num) => {
   
-  // THIS IS WHERE I AM AT!!!
-  // THIS IS WHERE I AM AT!!!
-  // THIS IS WHERE I AM AT!!!
-  // THIS IS WHERE I AM AT!!!
-  // THIS IS WHERE I AM AT!!!
-  // THIS IS WHERE I AM AT!!!
-  // THIS IS WHERE I AM AT!!!
-  // THIS IS WHERE I AM AT!!!
-  // THIS IS WHERE I AM AT!!!
-  // THIS IS WHERE I AM AT!!!
-  // THIS IS WHERE I AM AT!!!
-  // THIS IS WHERE I AM AT!!!
-  // -Need to:
-  //  --have add food button for meal two add the row to the second table.
-  //  --Add an add-meal button to day.
-  //  --Modify days summary table to add up everything over all tables for day
-
-
   add_food_button_day0.addEventListener('click', () => {
     
     num_rows++;
