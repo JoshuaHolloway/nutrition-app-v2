@@ -54,8 +54,6 @@ const append_li = (meal_num, row_num, a_class_name, innerText) => {
     //  and grab the foods property of that object.
 
     // Get an individual document from a collection
-
-
     const update_servings_in_db = (food_name, servings) => {
       week0_db.collection('day0-collection').doc({ id: meal_num }).get().then(document => {
         // -Fire .doc() method with obj as arg with selection criteria.
@@ -67,7 +65,9 @@ const append_li = (meal_num, row_num, a_class_name, innerText) => {
         // -Generate row in database (property of current meal document)
         week0_db.collection('day0-collection').doc({ id: meal_num }).update({
           // foods: {...foods, food_name: {servings: 0} }
-          foods: {...document.foods, [`${food_name}`]: Number(servings)}
+          foods: {...document.foods, [`${food_name}`]: {
+            servings: Number(servings)
+          }}
           // -I want to add a new property to the set of current properties of the document with
         });
       });
