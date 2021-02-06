@@ -66,7 +66,11 @@ const append_li = (meal_num, row_num, a_class_name, innerText) => {
         week0_db.collection('day0-collection').doc({ id: meal_num }).update({
           // foods: {...foods, food_name: {servings: 0} }
           foods: {...document.foods, [`${food_name}`]: {
-            servings: Number(servings)
+            servings: Number(servings),
+            protein: known_foods[food_name].nutrition_facts.protein * Number(servings),
+            fat: known_foods[food_name].nutrition_facts.fat.total * Number(servings),
+            carbs: known_foods[food_name].nutrition_facts.carbs.total * Number(servings),
+            cals: compute_cals(known_foods[food_name].nutrition_facts.protein, known_foods[food_name].nutrition_facts.fat.total, known_foods[food_name].nutrition_facts.carbs.total) * Number(servings)
           }}
           // -I want to add a new property to the set of current properties of the document with
         });

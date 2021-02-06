@@ -27,99 +27,14 @@
     <div class="tab-content" id="myTabContent">
       <div class="tab-pane fade show active" id="tab-0-window" role="tabpanel" aria-labelledby="home-tab">
 
-        <div class="container-fluid">
+        <div id="day0_container" class="container-fluid">
 
-          <!-- meal-0 -->
-          <div class="row mb-4">
-            <div class="card bg-dark text-white">
-              <div class="card-body">
-                <h5 class="card-title">Meal 1</h5>
-                <h6 class="card-subtitle mb-2 text-muted">6am</h6>
-      
-                  <table id="day0-table0" class="day0-tables table table-dark table-hover table-striped">
-                    <thead>
-                      <tr>
-                        <th scope="col">Food</th>
-                        <th scope="col">Servings</th>
-                        <th scope="col">Protein</th>
-                        <th scope="col">Carbs</th>
-                        <th scope="col">Fat</th>
-                        <th scope="col">Calories</th>
-                      </tr>
-                    </thead>
-                    <tbody id="tbody-day0-meal0">
-      
-                      <tr class="day0-totals-rows">
-                        <th scope="row">
-                          <button type="button" class="btn  button-dark" data-bs-toggle="modal" data-bs-target="#modal-day0-totals">
-                            Meal Totals
-                          </button>
-                        </th>
-                        <td></td>
-                        <td id="day0-meal0-totals-protein" class="day0-totals-protein"></td>
-                        <td id="day0-meal0-totals-carbs"   class="day0-totals-carbs"></td>
-                        <td id="day0-meal0-totals-fat"     class="day0-totals-fat"></td>
-                        <td id="day0-meal0-totals-cals"    class="day0-totals-cals"></td>
-                      </tr>
-      
-                    </tbody>
-                  </table>
-      
-                  <!-- Add Food Button -->
-                  <button id="add-food-button-day0-meal0" type="button" class="btn btn-secondary add-food-button-day0">
-                    Add Food
-                  </button>
-      
-              </div>
-            </div>
-          </div> <!-- /.row -->
-      
-          <!-- meal-1 -->
-          <div class="row mb-4">
-            <div class="card bg-dark text-white">
-              <div class="card-body">
-                <h5 class="card-title">Meal 2</h5>
-                <h6 class="card-subtitle mb-2 text-muted">8am</h6>
-      
-                  <table id="day0-table1" class="day0-tables table table-dark table-hover table-striped">
-                    <thead>
-                      <tr>
-                        <th scope="col">Food</th>
-                        <th scope="col">Servings</th>
-                        <th scope="col">Protein</th>
-                        <th scope="col">Carbs</th>
-                        <th scope="col">Fat</th>
-                        <th scope="col">Calories</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-      
-                      <tr class="day0-totals-rows">
-                        <th scope="row">
-                          <button type="button" class="btn button-dark" data-bs-toggle="modal" data-bs-target="#modal-day0-goals">
-                            Meal Totals
-                          </button>
-                        </th>
-                        <td></td>
-                        <td id="day0-meal1-totals-protein" class="day0-totals-protein"></td>
-                        <td id="day0-meal1-totals-carbs"   class="day0-totals-carbs"></td>
-                        <td id="day0-meal1-totals-fat"     class="day0-totals-fat"></td>
-                        <td id="day0-meal1-totals-cals"    class="day0-totals-cals"></td>
-                      </tr>
-
-                    </tbody>
-                  </table>
-      
-                  <!-- Add Food Button -->
-                  <button id="add-food-button-day0-meal1" type="button" class="btn btn-secondary add-food-button-day0">
-                    Add Food
-                  </button>
-              </div>
-            </div>
-          </div> <!-- /.row -->
+          <!-- MEALS GO HERE -->
+          <div id="day0_meals_div">
+          </div>
 
           <!-- day-summary -->
-          <div class="row">
+          <div id="day0_day-summary-row_div" class="row">
             <div class="card bg-dark text-white">
               <div class="card-body">
                 <h5 class="card-title">Day Summary</h5>
@@ -187,6 +102,12 @@
               </div>
             </div>
           </div> <!-- /.row -->
+
+          <div class="row">
+            <button id="day0_add-meal_button" type="button" class="btn btn-primary mt-3">
+              Add Meal
+            </button>
+          </div>
         </div>
 
       </div>
@@ -243,6 +164,7 @@
   <script src="./js/main.js"></script>
   <script src="./js/known-foods.js"></script>
   <script src="./js/grid-grow.js"></script>
+  <script src="./js/add-meal.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
