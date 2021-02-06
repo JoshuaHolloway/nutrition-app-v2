@@ -1,3 +1,7 @@
+  // program globals
+  let meal__num = 0;
+  let num_rows = 0; // TODO: Change to be unique to each table
+
 // const days = [
 //   meals[0],
 //   meals[1]
@@ -35,17 +39,16 @@ const meals = [
 // Create DB:
 let week0_db = new Localbase('week0-db');
 
-week0_db.collection('exists').doc({ id: 0 }).get().then(document => {
+week0_db.collection('exists').doc({ id: 0 }).get().then(doc => {
   // -Fire .doc() method with obj as arg with selection criteria.
   // -Trigger .get() method, which returns a promise with the document.
-  console.log(document);
-  return document;
-}).then(function(document) {
-  console.log('results: ', document);
+  console.log(doc);
+
+  console.log('results: ', doc);
 
   // -If document.exists === true, then grab the number of rows in the table
   //  and the corresponding data for each row and render the HTML
-  if (document === undefined) {
+  if (doc === undefined) {
     console.log('TODO: Create the database');
 
     week0_db.collection('exists').add({
@@ -54,16 +57,25 @@ week0_db.collection('exists').doc({ id: 0 }).get().then(document => {
     });
   } else {
     console.log('TODO: Render the HTML');
+
+    // Step 1: Get the document for meal0 from db
+    // Step 2: Grab the keys from document.foods:
+    //        const keys = Object.keys(document.foods);
+    // Step 3: Loop over the keys to generate the rows in the table
+
+    week0_db.collection('day0-collection').doc({ id: 0 }).get().then(doc_ => {
+      // -Fire .doc() method with obj as arg with selection criteria.
+      // -Trigger .get() method, which returns a promise with the document.
+      console.log('doc_: ', doc_);
+
+      // debugger;
+      const keys = Object.keys(doc_.foods);
+      console.log('keys: ', keys);
+    })
   }
 });
 
-
-
-
-
-
-
-
+// ===========================================================
 
 const create_db_button = document.querySelector('#create-db');
 create_db_button.addEventListener('click', () => {
@@ -73,14 +85,6 @@ create_db_button.addEventListener('click', () => {
     id: 0,
     exists: true
   });
-
-  // Create meal:
-  // let meal__num = 0;
-  // week0_db.collection('day0-collection').add({
-  //   id: meal__num++,
-  //   total_meal_cals: 0,
-  //   foods: {}
-  // });
 });
 
 const delete_db_button = document.querySelector('#delete-db');

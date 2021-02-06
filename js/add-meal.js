@@ -56,4 +56,15 @@ day0_addMeal_button_node.addEventListener('click', () => {
   // console.log(children);
   const day0_meals_div = document.querySelector('#day0_meals_div');
   day0_meals_div.append(newRow_node);
+
+  // -(re)-append listeners to all add-food buttons
+  // -TODO: Just add a new listener to the newly created button
+  add_listeners_to_all_add_food_buttons_for_day();
+
+  // -Create meal in DB:
+  week0_db.collection('day0-collection').add({
+    id: meal__num++,
+    total_meal_cals: 0,
+    foods: {}
+  });
 });
